@@ -1,0 +1,23 @@
+body
+  padding: 50px
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+
+a
+  color: #00B7FF
+
+
+.game-board
+  height: 500px
+  width: 500px
+  display: grid
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr
+
+.square
+  padding: 10px;
+
+  &:nth-child(3n+2),
+  &:nth-child(3n)
+    border-left: 1px solid grey
+
+.square:nth-child(-n+6)
+  border-bottom: 1px solid grey
