@@ -20,3 +20,5 @@ Borrowed from / inspired by [Wes Bos 30-Day JS Challenge](https://github.com/wes
 * Bind to click on "start game" button so game doesn't start until user clicks that
 * Increase the speed of the moles as the game progresses
 * End the game after 20 hits
+* Add a timer
+* Ensure the event was registered by a user and not a script
