@@ -6,4 +6,8 @@ block content
   div.game-board
     - var n = 0;
     while n < 20
-      div.square(id=n++) Square #{n}
+      div.flip-card(id=n++)
+        div.flip-card-inner
+          div.flip-card-front Square #{n}
+          div.flip-card-back Back of Card
+  
