@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.game-board {
+  height: 500px;
+  width: 500px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr; }
+
+.square {
+  padding: 10px;
+  border: 1px solid grey;
+  margin: 10px; }
+
+/*# sourceMappingURL=style.css.map */
