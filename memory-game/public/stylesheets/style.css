@@ -13,11 +13,10 @@ a {
 
 .square {
   margin: 10px; }
-  .square .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px; }
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px; }
 
 .flip-card-inner {
   position: relative;
@@ -27,7 +26,7 @@ a {
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
-  .flip-card:hover .flip-card-inner {
+  .flipped .flip-card-inner {
     transform: rotateY(180deg); }
 
 .flip-card-front, .flip-card-back {
