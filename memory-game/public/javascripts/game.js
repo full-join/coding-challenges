@@ -5,9 +5,11 @@ class Card {
   }
   flip() {
     this.element.classList.add("flipped");
+    this.flipped = true;
   }
   unflip() {
     this.element.classList.remove("flipped");
+    this.flipped = false;
   }
 }
 
