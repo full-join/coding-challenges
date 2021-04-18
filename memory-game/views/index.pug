@@ -4,6 +4,6 @@ block content
   h1= title
   p Welcome to #{title}
   div.game-board
-    - var n = 0;
-    while n < 20
-      div.square(id=n++) Square #{n}
+    - var n = 1;
+    while n < 21
+      div.square(id=n) Square #{n++}
