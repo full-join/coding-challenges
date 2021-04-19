@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('tic-tac-toe:server');
+var debug = require('debug')('memory-game:server');
 var http = require('http');
 
 /**
