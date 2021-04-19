@@ -7,20 +7,16 @@ a
 
 
 .game-board
-  height: 500px
   width: 500px
+  height: 400px
   display: grid
   grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr
 
-
-
 .flip-card
   background-color: transparent;
-  width: 300px;
-  height: 200px;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
-
+  
 .flip-card-inner 
   position: relative;
   width: 100%;
@@ -30,11 +26,14 @@ a
   transform-style: preserve-3d;
 
 
-.flip-card:hover .flip-card-inner
+.flip-card.flipped .flip-card-inner
   transform: rotateY(180deg);
 
 .flip-card-front, .flip-card-back
-  position: absolute;
+  display: flex
+  justify-content: center
+  align-items: center
+  position: absolute
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
@@ -45,7 +44,6 @@ a
   color: black;
 
 .flip-card-back
-  background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
 

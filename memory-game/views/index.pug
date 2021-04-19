@@ -1,13 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div.game-board
-    - var n = 0;
-    while n < 20
-      div.flip-card(id=n++)
-        div.flip-card-inner
-          div.flip-card-front Square #{n}
-          div.flip-card-back Back of Card
-  
+  div.text-2xl.font-semibold.text-pink-500 Full Join #{title}
+    div#winner.font-semibold.text-pink-500.text-3xl
+    div.game-board.p-4
+      - var n = 0;
+      while n < 20
+        div.flip-card(id=n++)
+          div.flip-card-inner
+            div.flip-card-front
+            div.flip-card-back.bg-yellow-400.text-5xl
