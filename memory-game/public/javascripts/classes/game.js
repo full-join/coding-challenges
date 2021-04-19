@@ -11,12 +11,13 @@ export default class Game {
         let card = this.board[indx]
         this.current.push(card)
         this.checkMatch()
+        this.checkforWin()
     }
 
     checkMatch(){
         if(this.current.length !== 2) return false
         if(Card.isMatch(this.current)) {
-            return true
+            this.current = []
         } else {
             setTimeout(()=>{
                 this.current.map(c => c.reset())

@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
         boardDom.appendChild(card.domElement)
         board.push(card)
         card.domElement.addEventListener("click", (e)=>{
-            console.log(e.currentTarget)
             game.addToCurrent(e.currentTarget.id)
         })
     })
