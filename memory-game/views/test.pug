@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= "Test Runner"
+    link(rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.15.0.css")
+
+  body
+    block content
+        div(id="qunit")
+        div(id="qunit-fixture")
+    script(src="https://code.jquery.com/qunit/qunit-2.15.0.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/9.2.4/sinon.min.js")
+    script(type="module" src="javascripts/tests.js")
