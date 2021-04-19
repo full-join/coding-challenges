@@ -5,7 +5,7 @@ export function generateValues(n){
     const randomized = []
     while (values.length){
         const i = Math.floor(Math.random()*values.length)
-        randomized.push(values.splice(i, 1))
+        randomized.push(...values.splice(i, 1))
     }
     return randomized
 }
