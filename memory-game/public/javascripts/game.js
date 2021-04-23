@@ -29,7 +29,7 @@ class Card {
 
 class Game {
   constructor() {
-    this.turnNumber;
+    this.turnNumber = 0;
     this.cards = [];
     this.cardpair = [];
     this.running = false;
@@ -43,6 +43,14 @@ class Game {
       item.addEventListener("click", onSquareClick);
     });
     this.assignNumbersToCards();
+  }
+
+  get allCardsFlipped() {
+    let flipped = true;
+    this.cards.forEach((card) => {
+      flipped = flipped && card.flipped;
+    });
+    return flipped;
   }
 
   start() {
@@ -83,6 +91,11 @@ class Game {
 
       this.cardpair = [];
       this.turnNumber++;
+      console.log(this.turnNumber);
+      if (game.allCardsFlipped) {
+        let titleEl = document.getElementById("title");
+        titleEl.innerText = `You did it! Only took you ${this.turnNumber} tries!`;
+      }
     }
   }
 

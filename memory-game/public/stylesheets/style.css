@@ -43,6 +43,7 @@ a {
 .flip-card-back {
   background-color: #2980b9;
   color: white;
+  font-size: xx-large;
   transform: rotateY(180deg); }
 
 /*# sourceMappingURL=style.css.map */

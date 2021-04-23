@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p(id='title') Welcome to #{title}
   div.game-board
     - var n = 0;
     while n < 20
