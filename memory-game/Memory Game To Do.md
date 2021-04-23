@@ -6,3 +6,11 @@
 - [ ] make a game object/class?
 - [ ] put pairs of stuff on the cards
 - [ ] make the rest of the game!
+
+
+## Game Logic
+1. On Load, assign random pair values to cards
+2. On each turn: 
+   1. First click turns over a card
+   2. Second click turns over a second card
+   3. if the two card values are the same, leave them up otherwise flip them over after a delay

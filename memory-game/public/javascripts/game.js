@@ -13,7 +13,13 @@ class Card {
   }
 }
 
-let cards = [];
+class Game {
+  constructor(){
+    let turnNumber;
+    let cards = [];
+    let cardpair = [];    
+  };
+}
 
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".square").forEach((item) => {
@@ -27,6 +33,7 @@ function onSquareClick(e) {
   let square = e.target.parentElement.parentElement;
   let squareNumber = square.id;
   let card = cards[squareNumber];
+
   if (!card.flipped) {
     card.flip();
   } else {
