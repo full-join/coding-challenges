@@ -1,4 +1,18 @@
 class Card {
+  faImages = [
+    "fas fa-dog",
+    "fas fa-cat",
+    "fab fa-angellist",
+    "fas fa-tint",
+    "fas fa-dove",
+    "fas fa-hat-wizard",
+    "fas fa-ghost",
+    "fas fa-spider",
+    "fab fa-earlybirds",
+    "fas fa-grin-squint-tears",
+    "fas fa-horse",
+  ];
+
   constructor(element) {
     this.element = element;
     this.flipped = false;
@@ -7,9 +21,17 @@ class Card {
   }
 
   set value(val) {
+    // assign the value and get the element for that value's card back
     this._value = val;
     let backEl = this.element.getElementsByClassName("flip-card-back")[0];
-    backEl.innerText = String(val);
+
+    // create the contents for that element
+    let content = document.createElement("i");
+    content.classList.add(...this.faImages[val].split(" "));
+
+    // clear out the old content and put in the new content
+    backEl.innerHTML = null;
+    backEl.appendChild(content);
   }
 
   get value() {
