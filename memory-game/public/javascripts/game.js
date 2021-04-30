@@ -33,7 +33,8 @@ class Game {
     this.cards = [];
     this.cardpair = [];
     this.running = false;
-    this.endTurnTimeout = 2000;
+    this.endTurnTimeout = 1000;
+    this.endOfTurn = false;
 
     document.querySelectorAll(".square").forEach((item) => {
       let card = new Card(item);
@@ -67,6 +68,11 @@ class Game {
       return;
     }
 
+    if (this.endOfTurn) {
+      console.log("Slow down, the next turn hasn't started yet.");
+      return;
+    }
+
     if (!this.running) {
       console.log("Game's not running yet.");
       return;
@@ -76,6 +82,7 @@ class Game {
     card.flip();
 
     if (this.cardpair.length == 2) {
+      this.endOfTurn = true;
       let cards = this.cardpair;
       let match = cards[0].value == cards[1].value;
       console.log(match ? "You got a pair!" : "Sorry, try again");
@@ -85,8 +92,11 @@ class Game {
           console.log(`Unflipping cards`, cards[0].id, "and", cards[1].id);
           for (let card of cards) {
             card.unflip();
+            this.endOfTurn = false;
           }
         }, this.endTurnTimeout);
+      } else {
+        this.endOfTurn = false;
       }
 
       this.cardpair = [];
