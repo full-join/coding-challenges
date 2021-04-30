@@ -1,16 +1,20 @@
+{
+  /* <i class="fas fa-hotdog"></i>
+<i class="fas fa-ice-cream"></i> */
+}
 class Card {
   faImages = [
     "fas fa-dog",
     "fas fa-cat",
-    "fab fa-angellist",
-    "fas fa-tint",
+    "fas fa-hotdog",
+    "fas fa-hamburger",
     "fas fa-dove",
     "fas fa-hat-wizard",
     "fas fa-ghost",
-    "fas fa-spider",
+    "fas fa-pizza-slice",
     "fab fa-earlybirds",
     "fas fa-grin-squint-tears",
-    "fas fa-horse",
+    "fas fa-ice-cream",
   ];
 
   constructor(element) {
@@ -57,6 +61,7 @@ class Game {
     this.running = false;
     this.endTurnTimeout = 1000;
     this.endOfTurn = false;
+    this.endGameAnimation = this.allFlipAnimation;
 
     document.querySelectorAll(".square").forEach((item) => {
       let card = new Card(item);
@@ -127,6 +132,7 @@ class Game {
       if (game.allCardsFlipped) {
         let titleEl = document.getElementById("title");
         titleEl.innerText = `You did it! Only took you ${this.turnNumber} tries!`;
+        this.endGameAnimation();
       }
     }
   }
@@ -160,9 +166,27 @@ class Game {
       card.unflip();
     }
   }
+
+  allFlipAnimation() {
+    let i = 0;
+    this.ani = setInterval(() => {
+      i % 2 == 0 ? this.unflipAllCards() : this.flipAllCards();
+      i++;
+    }, 500);
+  }
+
+  cycleFlipAnimation() {
+    let i = 0;
+    this.ani = setInterval(() => {
+      if (i >= this.cards.length) i = 0;
+      this.cards[i].flipped ? this.cards[i].unflip() : this.cards[i].flip();
+      i++;
+    }, 50);
+  }
 }
 
 let game = new Game();
+game.endGameAnimation = game.cycleFlipAnimation;
 
 window.addEventListener("DOMContentLoaded", () => {
   game.flipAllCards();
